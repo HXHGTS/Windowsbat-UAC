@@ -24,14 +24,6 @@ if '%errorlevel%' == '0' ( goto gotPrivileges ) else ( goto getPrivileges )
 
 if '%1'=='ELEV' (echo ELEV & shift /1 & goto gotPrivileges)
 
-ECHO.
-
-ECHO --------------------------------
-
-ECHO Requesting UAC . . . . . .
-
-ECHO --------------------------------
-
 ECHO Set UAC = CreateObject^("Shell.Application"^) > "%vbsGetPrivileges%"
 
 ECHO args = "ELEV " >> "%vbsGetPrivileges%"
@@ -56,6 +48,6 @@ cd /d %~dp0
 
 if '%1'=='ELEV' (del "%vbsGetPrivileges%" 1>nul 2>nul  &  shift /1)
 
-\\放入bat代码
+\\put code here
 
 pause
